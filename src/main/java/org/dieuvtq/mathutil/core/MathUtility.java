@@ -9,6 +9,7 @@ package org.dieuvtq.mathutil.core;
  * @author User
  */
 public class MathUtility {
+
     public static final double PI = 3.1415;
 
 //    hàm này tính n! = 1.2.3...n
@@ -20,6 +21,7 @@ public class MathUtility {
 //    21 giai thừa kiểu long chứa ko được
 //    hàm chỉ cho phép n = 0..20
 //    đưa n > 20; CHỬI, NÉM RA EXCEPTION
+    /*
     public static long getFactorial(int n) {
         if (n < 0 || n > 20) throw new IllegalArgumentException("Invalid n. n must be between 0..20, plz");
         if (n == 0 || n == 1) return 1;
@@ -28,6 +30,24 @@ public class MathUtility {
             product *= i;
         return product;
     }
+     */
+    public static long getFactorial(int n) {
+        if (n < 0 || n > 20) {
+            throw new IllegalArgumentException("Invalid n. n must be between 0..20, plz");
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * getFactorial(n - 1);
+        //đệ quy - recursion
+    }
+
+    // 5! = 1.2.3.4.5 = 4!x5 = 5x4!
+    // 4! = 4x3!
+    // 3! = 3x2!
+    // 2! = 2x1!
+    // 1! = 1; //DỪNG
+    // N! = N x (N-1)!
 }
 
 // TDD: Test Driven Development là kĩ thuật viết code cí chất lượng bằng cách code và test case và test run được thực thi đan xen
@@ -42,16 +62,12 @@ public class MathUtility {
 // Dev và QC đều phải thiết kế test case
 // Test case là bộ data gốm phần input, expected dùng để đưa vào app/hàm
 // để đo lường hàm đúng sai, và mô phỏng 1 tình huống xài app của user
-
 // Test case có thể viết tự do, hoặc viết theo template
-
 // Tự do: để test hàm getF() ta cần các test case sau
 //          0! -> 1; 1! -> 1; 2! -> 2; 3! -> 6; 5! -> 120
 // Đưa data vào và hy vọng trả về
-
 // Giang hồ luôn viết theo template, 1 test case sẽ gồm nhiều info
 // liên quan/nhiều mục cần điền info
-
 // Test case #1: (mục đích test case): check getF() method with n = 0
 // Steps/Procedures (các bước để run test case, input, click...)
 //      1. Given n = 1

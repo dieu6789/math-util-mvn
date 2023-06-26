@@ -6,7 +6,7 @@ package org.dieuvtq.main.util.core.test;
 
 import static org.dieuvtq.mathutil.core.MathUtility.getFactorial;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.params.ParameterizedTest;  
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
@@ -26,18 +26,18 @@ public class MathUtilityAdvancedTest {
     public static Object[][] unitTestData() {
         // int a[] = {5, 10, 15, 20};
         Object testData[][] = {{0, 1},
-                               {1, 1}, 
-                               {2, 2}, 
-                               {4, 24}, 
-                               {5, 1200}
-                              };
-        return testData; 
+        {1, 1},
+        {2, 2},
+        {4, 24},
+        {5, 120}
+        };
+        return testData;
     }
-    
+
     @ParameterizedTest
     @MethodSource("unitTestData")
     public void checkFactorialGIvenRightArgumentReturnsWell(int n, long expected) {
-                                                          //cột 0         cột 1
+        //cột 0         cột 1
         assertEquals(expected, getFactorial(n));
     }
 }
@@ -54,7 +54,6 @@ public class MathUtilityAdvancedTest {
 // lập trình mà viết code chính và code test (JUnit, Unit Test)
 // đan xen xen kẽ nhau thì gọi là TDD
 // VIẾT CODE THEO VIỆC KIỂM THỬ NGAY CODE
-
 // DDT: Data Driven Testing: là kĩ thuật mở rộng, bổ sung thêm cho:
 // TDD trong đó việc viết code test đc tách riêng ra so vs test
 // data nghĩa là bộ dữ liệu test thường đc đặt 
