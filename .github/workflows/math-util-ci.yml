@@ -28,5 +28,5 @@ jobs:
     - name: Make hyperlink to jar-war file # Tạo hyperlink để download build 
       uses: actions/upload-artifact@v1
       with:
-        name: moi-nha-tuyen-dung-xem-file-jar.zip #File .jar .war đc tạo ở Mỹ đc nén vào .zip để download
+        name: moi-nha-tuyen-dung-xem-file-jar.zip #File .jar .war đc tạo ở Mỹ đc nén vào .zip để download.
         path: staging
